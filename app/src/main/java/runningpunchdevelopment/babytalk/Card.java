@@ -10,9 +10,10 @@ import java.io.Serializable;
  */
 public class Card implements Serializable {
     private String name;
-    private Drawable image;
+    private int image;
 
-    public Card(String name) {
+    public Card(String name, int image) {
+        this.image = image;
         this.name = name;
     }
 
@@ -24,11 +25,11 @@ public class Card implements Serializable {
         this.name = name;
     }
 
-    public Drawable getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(Drawable image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }

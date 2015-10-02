@@ -36,7 +36,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
 
             holder = new CardHolder();
             holder.cardTitle = (TextView) row.findViewById(R.id.cardTextView);
-            //holder.cardImage = (ImageView) row.findViewById(R.id.cardImageView);
+            holder.cardImage = (ImageView) row.findViewById(R.id.cardImageView);
 
             row.setTag(holder);
         } else {
@@ -45,7 +45,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
 
         Card card = data[position];
         holder.cardTitle.setText(card.getName());
-        //holder.cardImage.setImageResource(card.getImage());
+        holder.cardImage.setImageResource(card.getImage());
 
         return row;
     }

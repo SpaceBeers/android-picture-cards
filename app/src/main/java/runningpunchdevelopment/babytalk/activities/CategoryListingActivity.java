@@ -26,11 +26,11 @@ public class CategoryListingActivity extends AppCompatActivity {
 
         Card cards_array[] = new Card[]
             {
-                    new Card("Matt"),
-                    new Card("Dog"),
-                    new Card("Carl"),
-                    new Card("Jeff"),
-                    new Card("Cow")
+                    new Card("Matt", R.drawable.sample_0),
+                    new Card("Dog", R.drawable.sample_1),
+                    new Card("Carl", R.drawable.sample_2),
+                    new Card("Jeff", R.drawable.sample_3),
+                    new Card("Cow", R.drawable.sample_4)
             };
 
         CardAdapter adapter = new CardAdapter(this,
