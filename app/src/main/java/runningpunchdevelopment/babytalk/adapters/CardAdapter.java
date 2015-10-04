@@ -50,8 +50,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
         return row;
     }
 
-    static class CardHolder
-    {
+    static class CardHolder {
         ImageView cardImage;
         TextView cardTitle;
     }
