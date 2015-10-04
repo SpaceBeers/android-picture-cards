@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import runningpunchdevelopment.babytalk.Card;
 import runningpunchdevelopment.babytalk.R;
 
@@ -16,9 +18,9 @@ public class CardAdapter extends ArrayAdapter<Card> {
 
     Context context;
     int layoutResourceId;
-    Card data[] = null;
+    List<Card> data = null;
 
-    public CardAdapter(Context context, int layoutResourceId, Card[] data) {
+    public CardAdapter(Context context, int layoutResourceId, List<Card> data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -43,7 +45,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
             holder = (CardHolder)row.getTag();
         }
 
-        Card card = data[position];
+        Card card = data.get(position);
         holder.cardTitle.setText(card.getName());
         holder.cardImage.setImageResource(card.getImage());
 

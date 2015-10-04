@@ -27,25 +27,22 @@ public class CategoryListingActivity extends AppCompatActivity {
 
         cardsGridView = (GridView)findViewById(R.id.cardsGridView);
 
-        Card cards_array[] = new Card[]
-            {
-                    new Card("Matt", R.drawable.sample_0),
-                    new Card("Dog", R.drawable.sample_1),
-                    new Card("Carl", R.drawable.sample_2),
-                    new Card("Jeff", R.drawable.sample_3),
-                    new Card("Cow", R.drawable.sample_4),
-                    new Card("Cow", R.drawable.sample_5),
-                    new Card("Cow", R.drawable.sample_6),
-                    new Card("Cow", R.drawable.sample_7)
-            };
+        cards.add(new Card("Matt", R.drawable.sample_0));
+        cards.add(new Card("Dog", R.drawable.sample_1));
+        cards.add(new Card("Carl", R.drawable.sample_2));
+        cards.add(new Card("Jeff", R.drawable.sample_3));
+        cards.add(new Card("Cow", R.drawable.sample_4));
+        cards.add(new Card("Cow", R.drawable.sample_5));
+        cards.add(new Card("Cow", R.drawable.sample_6));
+        cards.add(new Card("Cow", R.drawable.sample_7));
 
-        CardAdapter adapter = new CardAdapter(this,R.layout.card_layout, cards_array);
+        CardAdapter adapter = new CardAdapter(this,R.layout.card_layout, cards);
 
         cardsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
                 Intent cardDetailIntent = new Intent(view.getContext(), CardDetailActivity.class);
-                //editNoteIntent.putExtra("Note", notes.get(position));
+                cardDetailIntent.putExtra("Card", cards.get(position));
 
                 startActivityForResult(cardDetailIntent, 1);
             }
