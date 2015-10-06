@@ -1,5 +1,11 @@
 package runningpunchdevelopment.babytalk.activities;
 
+import android.media.AudioAttributes;
+import android.media.AudioFormat;
+import android.media.AudioManager;
+import android.media.AudioTrack;
+import android.media.SoundPool;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -16,6 +23,7 @@ import runningpunchdevelopment.babytalk.Card;
 import runningpunchdevelopment.babytalk.R;
 
 public class CardDetailActivity extends AppCompatActivity {
+    private SoundPool spool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,10 @@ public class CardDetailActivity extends AppCompatActivity {
             Card card = (Card)extra;
             cardNameView.setText(card.getName());
             cardImageView.setImageResource(card.getImage());
+
+            spool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+            int soundID = spool.load(this, card.getSound(), 1);
+            spool.play(soundID, 500, 500, 1, 0, 1f);
         }
 
         return true;
