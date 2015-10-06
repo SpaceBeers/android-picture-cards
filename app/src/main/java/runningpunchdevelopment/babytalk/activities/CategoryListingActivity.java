@@ -27,14 +27,14 @@ public class CategoryListingActivity extends AppCompatActivity {
 
         cardsGridView = (GridView)findViewById(R.id.cardsGridView);
 
-        cards.add(new Card("Matt", R.drawable.sample_0));
-        cards.add(new Card("Dog", R.drawable.sample_1));
-        cards.add(new Card("Carl", R.drawable.sample_2));
-        cards.add(new Card("Jeff", R.drawable.sample_3));
-        cards.add(new Card("Cow", R.drawable.sample_4));
-        cards.add(new Card("Cow", R.drawable.sample_5));
-        cards.add(new Card("Cow", R.drawable.sample_6));
-        cards.add(new Card("Cow", R.drawable.sample_7));
+        cards.add(new Card("Matt", R.drawable.sample_0, R.raw.pig));
+        cards.add(new Card("Dog", R.drawable.sample_1, R.raw.goose));
+        cards.add(new Card("Carl", R.drawable.sample_2, R.raw.turkey));
+        cards.add(new Card("Jeff", R.drawable.sample_3, R.raw.pig));
+        cards.add(new Card("Cow", R.drawable.sample_4, R.raw.goose));
+        cards.add(new Card("Cow", R.drawable.sample_5, R.raw.turkey));
+        cards.add(new Card("Cow", R.drawable.sample_6, R.raw.pig));
+        cards.add(new Card("Cow", R.drawable.sample_7, R.raw.goose));
 
         CardAdapter adapter = new CardAdapter(this,R.layout.card_layout, cards);
 

@@ -48,6 +48,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
         Card card = data.get(position);
         holder.cardTitle.setText(card.getName());
         holder.cardImage.setImageResource(card.getImage());
+        holder.cardImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         return row;
     }
