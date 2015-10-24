@@ -41,10 +41,16 @@ public class CategoryListingActivity extends AppCompatActivity {
         cardsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-                Intent cardDetailIntent = new Intent(view.getContext(), CardDetailActivity.class);
+                Intent cardDetailIntent = new Intent(CategoryListingActivity.this, CardDetailActivity.class);
                 cardDetailIntent.putExtra("Card", cards.get(position));
 
                 startActivityForResult(cardDetailIntent, 1);
+
+
+                //startActivity(new Intent(CategoryListingActivity.this, CardDetailActivity.class));
+
+                // ( for incoming SecondActivity, for outgoing MainActivity )
+                overridePendingTransition(R.anim.activity_open_translate, R.anim.activity_close_translate);
             }
         });
 
