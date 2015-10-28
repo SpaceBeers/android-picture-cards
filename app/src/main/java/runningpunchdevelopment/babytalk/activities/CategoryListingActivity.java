@@ -46,10 +46,6 @@ public class CategoryListingActivity extends AppCompatActivity {
 
                 startActivityForResult(cardDetailIntent, 1);
 
-
-                //startActivity(new Intent(CategoryListingActivity.this, CardDetailActivity.class));
-
-                // ( for incoming SecondActivity, for outgoing MainActivity )
                 overridePendingTransition(R.anim.activity_open_translate, R.anim.activity_close_translate);
             }
         });
