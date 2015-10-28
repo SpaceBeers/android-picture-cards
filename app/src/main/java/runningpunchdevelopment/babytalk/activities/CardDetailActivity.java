@@ -25,8 +25,10 @@ import java.text.SimpleDateFormat;
 import runningpunchdevelopment.babytalk.Card;
 import runningpunchdevelopment.babytalk.R;
 
+import static android.os.PowerManager.*;
+
 public class CardDetailActivity extends AppCompatActivity {
-    private SoundPool spool;
+    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,22 +45,15 @@ public class CardDetailActivity extends AppCompatActivity {
             cardNameView.setText(card.getName());
             cardImageView.setImageResource(card.getImage());
 
-            spool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-            int soundID = spool.load(this, card.getSound(), 1);
-            spool.play(soundID, 500, 500, 1, 0, 1f);
+            player = MediaPlayer.create(getApplicationContext(), card.getSound());
+            player.start();
 
-            /*MediaPlayer player = MediaPlayer.create(this.getContext(), card.getSound());
-            player.setWakeMode(getApplicationContext()PowerManager.PARTIAL_WAKE_LOCK);
-            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            player.setOnPreparedListener(this);
-            player.setOnCompletionListener(this);
-            player.setOnErrorListener(this);
-            try {
-                player.prepare();
-                player.start();
-                Log.e("debug", "sound played");
-            }  catch(Exception e) {}
-            player.stop();*/
+            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer player) {
+                    System.out.println("Sound over");
+                }
+            });
         }
     }
 
