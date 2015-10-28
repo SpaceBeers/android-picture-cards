@@ -1,31 +1,17 @@
 package runningpunchdevelopment.babytalk.activities;
 
-import android.media.AudioAttributes;
-import android.media.AudioFormat;
-import android.media.AudioManager;
-import android.media.AudioTrack;
 import android.media.MediaPlayer;
-import android.media.SoundPool;
-import android.os.PowerManager;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.InputStream;
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 import runningpunchdevelopment.babytalk.Card;
 import runningpunchdevelopment.babytalk.R;
-
-import static android.os.PowerManager.*;
 
 public class CardDetailActivity extends AppCompatActivity {
     MediaPlayer player;
