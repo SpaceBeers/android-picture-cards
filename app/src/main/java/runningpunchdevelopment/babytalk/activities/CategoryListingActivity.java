@@ -27,14 +27,18 @@ public class CategoryListingActivity extends AppCompatActivity {
 
         cardsGridView = (GridView)findViewById(R.id.cardsGridView);
 
-        cards.add(new Card("Matt", R.drawable.sample_0, R.raw.pig));
-        cards.add(new Card("Dog", R.drawable.sample_1, R.raw.goose));
-        cards.add(new Card("Carl", R.drawable.sample_2, R.raw.turkey));
-        cards.add(new Card("Jeff", R.drawable.sample_3, R.raw.pig));
-        cards.add(new Card("Cow", R.drawable.sample_4, R.raw.goose));
-        cards.add(new Card("Cow", R.drawable.sample_5, R.raw.turkey));
-        cards.add(new Card("Cow", R.drawable.sample_6, R.raw.pig));
-        cards.add(new Card("Cow", R.drawable.sample_7, R.raw.goose));
+        cards.add(new Card("Dog", R.drawable.dog, R.raw.dog));
+        cards.add(new Card("Cow", R.drawable.cow, R.raw.cow));
+        cards.add(new Card("Coyote", R.drawable.coyote, R.raw.coyote));
+        cards.add(new Card("Monkey", R.drawable.monkey, R.raw.monkey));
+        cards.add(new Card("Donkey", R.drawable.donkey, R.raw.donkey));
+        cards.add(new Card("Elephant", R.drawable.elephant, R.raw.elephant));
+        cards.add(new Card("Dolphin", R.drawable.dolphin, R.raw.dolphin));
+        cards.add(new Card("Bat", R.drawable.bat, R.raw.bat));
+        cards.add(new Card("Chipmunk", R.drawable.chipmunk, R.raw.chipmunk));
+        cards.add(new Card("Goose", R.drawable.goose, R.raw.goose));
+        cards.add(new Card("Tiger", R.drawable.tiger, R.raw.tiger));
+        cards.add(new Card("Zebra", R.drawable.zebra, R.raw.zebra));
 
         CardAdapter adapter = new CardAdapter(this,R.layout.card_layout, cards);
 

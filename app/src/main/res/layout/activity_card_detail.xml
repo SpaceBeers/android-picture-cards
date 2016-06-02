@@ -12,7 +12,7 @@
         android:id="@+id/cardImageView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/sample_0" />
+        android:src="@drawable/dog" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,5 +20,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:layout_below="@id/cardImageView"
-        android:id="@+id/cardNameView" />
+        android:id="@+id/cardNameView"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

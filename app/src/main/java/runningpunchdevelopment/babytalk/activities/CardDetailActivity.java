@@ -38,6 +38,7 @@ public class CardDetailActivity extends AppCompatActivity {
                 @Override
                 public void onCompletion(MediaPlayer player) {
                     System.out.println("Sound over");
+                    finish();
                 }
             });
         }
